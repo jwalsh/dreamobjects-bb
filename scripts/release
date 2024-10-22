@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+VERSION=$(cat VERSION)
+
+# Run tests
+bb test
+
+# Create git tag
+git tag -a "v$VERSION" -m "Release v$VERSION"
+git push origin "v$VERSION"
+
+# Create GitHub release using gh CLI if available
+if command -v gh &> /dev/null; then
+    gh release create "v$VERSION" \
+        --title "v$VERSION" \
+        --notes-file CHANGELOG.md
+fi

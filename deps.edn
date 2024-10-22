@@ -1,0 +1,23 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.babashka/pods {:mvn/version "0.2.0"}
+        org.clojure/tools.cli {:mvn/version "1.0.219"}
+        http-kit/http-kit {:mvn/version "2.7.0"}}
+ 
+ :aliases
+ {:dev
+  {:extra-paths ["test" "dev"]
+   :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
+                io.github.cognitect-labs/test-runner {:git/tag "v0.5.1" :git/sha "dfb30dd"}
+                cider/cider-nrepl {:mvn/version "0.28.5"}}}
+  
+  :test
+  {:extra-paths ["test"]
+   :extra-deps {io.github.cognitect-labs/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                 :sha "705ad25bbf0228b1c38d0244a36001c2987d8106"}}
+   :main-opts ["-m" "cognitect.test-runner"]}
+  
+  :build
+  {:deps {io.github.clojure/tools.build {:git/tag "v0.9.6" :git/sha "8e78bcc"}}
+   :ns-default build}}}

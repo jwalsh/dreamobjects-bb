@@ -1,0 +1,19 @@
+# Clojure
+.cpcache/
+.nrepl-port
+.clj-kondo/.cache/
+.lsp/.cache
+target/
+
+# Environment
+.env
+.envrc
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

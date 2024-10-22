@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Local development installation
+mkdir -p ~/.clojure/tools
+cp target/dreamobjects-bb.jar ~/.clojure/tools/

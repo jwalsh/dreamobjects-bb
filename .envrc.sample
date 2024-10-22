@@ -1,0 +1,10 @@
+# Core DreamObjects credentials
+export DO_REGION=us-east-1
+export DO_ACCESS_KEY_ID=your-key-here
+export DO_SECRET_ACCESS_KEY=your-secret-here
+
+# AWS CLI compatibility
+export AWS_PROFILE=dreamobjects
+export AWS_REGION=$DO_REGION
+export AWS_ACCESS_KEY_ID=$DO_ACCESS_KEY_ID
+export AWS_SECRET_ACCESS_KEY=$DO_SECRET_ACCESS_KEY
